@@ -1,6 +1,7 @@
 {
   "name": "stack-local-storage",
   "version": "0.1.1",
+  "license": "MIT",
   "scripts": {
     "build": "heft build",
     "test": "heft test",
