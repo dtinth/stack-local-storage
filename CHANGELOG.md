@@ -1,5 +1,11 @@
 # stack-local-storage
 
+## 0.1.2
+
+### Patch Changes
+
+- 57bcaef: Add MIT license
+
 ## 0.1.1
 
 ### Patch Changes
