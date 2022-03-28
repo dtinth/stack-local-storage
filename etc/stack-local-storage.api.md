@@ -4,6 +4,24 @@
 
 ```ts
 
-// (No @packageDocumentation comment for this package)
+// @public
+export class ExclusiveStackLocalStorage<T> {
+    constructor(options: ExclusiveStackLocalStorageOptions);
+    getStore(): T;
+    run<X, A extends any[]>(store: T, f: (...args: A) => X, ...args: A): X;
+}
+
+// @public
+export interface ExclusiveStackLocalStorageOptions {
+    conflictErrorMessage: string;
+    emptyErrorMessage: string;
+}
+
+// @public
+export class StackLocalStorage<T> {
+    constructor(initialStore: T);
+    getStore(): T;
+    run<X, A extends any[]>(store: T, f: (...args: A) => X, ...args: A): X;
+}
 
 ```
