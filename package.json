@@ -26,9 +26,9 @@
     "prettier": "2.5.1",
     "@changesets/cli": "2.20.0"
   },
-  "homepage": "#readme",
+  "homepage": "https://github.com/dtinth/stack-local-storage#readme",
   "bugs": {
-    "url": "#issues"
+    "url": "https://github.com/dtinth/stack-local-storage#issues"
   },
   "repository": {
     "type": "git",
