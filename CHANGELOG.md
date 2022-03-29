@@ -1,5 +1,11 @@
 # stack-local-storage
 
+## 0.2.0
+
+### Minor Changes
+
+- e776291: Create error subclasses for each error
+
 ## 0.1.2
 
 ### Patch Changes
