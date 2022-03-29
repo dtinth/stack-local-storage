@@ -18,6 +18,16 @@ export interface ExclusiveStackLocalStorageOptions {
 }
 
 // @public
+export class ExclusiveStorageConflictError extends Error {
+    constructor(message: string);
+}
+
+// @public
+export class ExclusiveStorageEmptyError extends Error {
+    constructor(message: string);
+}
+
+// @public
 export class StackLocalStorage<T> {
     constructor(initialStore: T);
     getStore(): T;

@@ -1,3 +1,7 @@
+import {
+  ExclusiveStorageConflictError,
+  ExclusiveStorageEmptyError,
+} from './errors'
 import { StackLocalStorage } from './StackLocalStorage'
 
 /**
@@ -46,7 +50,7 @@ export class ExclusiveStackLocalStorage<T> {
    */
   run<X, A extends any[]>(store: T, f: (...args: A) => X, ...args: A): X {
     if (this.storage.getStore()) {
-      throw new Error(this.conflictErrorMessage)
+      throw new ExclusiveStorageConflictError(this.conflictErrorMessage)
     }
     return this.storage.run({ value: store }, f, ...args)
   }
@@ -60,7 +64,7 @@ export class ExclusiveStackLocalStorage<T> {
   getStore(): T {
     const store = this.storage.getStore()
     if (!store) {
-      throw new Error(this.emptyErrorMessage)
+      throw new ExclusiveStorageEmptyError(this.emptyErrorMessage)
     }
     return store.value
   }

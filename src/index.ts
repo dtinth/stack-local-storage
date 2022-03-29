@@ -12,3 +12,4 @@
  */
 export * from './StackLocalStorage'
 export * from './ExclusiveStackLocalStorage'
+export * from './errors'
