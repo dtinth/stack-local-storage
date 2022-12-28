@@ -21,18 +21,18 @@
   "types": "./dist/stack-local-storage.d.ts",
   "docModel": "./dist/stack-local-storage.api.json",
   "devDependencies": {
-    "@rushstack/heft": "0.45.12",
-    "@rushstack/heft-web-rig": "0.10.15",
+    "@rushstack/heft": "0.48.7",
+    "@rushstack/heft-web-rig": "0.12.10",
     "@types/heft-jest": "1.0.3",
     "prettier": "2.7.1",
     "@changesets/cli": "2.25.0"
   },
   "homepage": "https://github.com/dtinth/stack-local-storage#readme",
   "bugs": {
-    "url": "https://github.com/dtinth/stack-local-storage#issues"
+    "url": "https://github.com/dtinth/stack-local-storage/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+.git"
+    "url": "git+https://github.com/dtinth/stack-local-storage.git"
   }
 }
