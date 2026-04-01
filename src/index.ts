@@ -10,6 +10,6 @@
  *
  * @packageDocumentation
  */
-export * from './StackLocalStorage'
-export * from './ExclusiveStackLocalStorage'
-export * from './errors'
+export * from "./StackLocalStorage.ts";
+export * from "./ExclusiveStackLocalStorage.ts";
+export * from "./errors.ts";

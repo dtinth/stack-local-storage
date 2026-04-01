@@ -14,14 +14,14 @@
  * @public
  */
 export class StackLocalStorage<T> {
-  private currentStore: T
+  private currentStore: T;
   /**
    * Creates a new StackLocalStorage.
    *
    * @param initialStore - the initial store
    */
   constructor(initialStore: T) {
-    this.currentStore = initialStore
+    this.currentStore = initialStore;
   }
 
   /**
@@ -33,12 +33,12 @@ export class StackLocalStorage<T> {
    * @returns - the return value of the function
    */
   run<X, A extends any[]>(store: T, f: (...args: A) => X, ...args: A): X {
-    const oldStore = this.currentStore
-    this.currentStore = store
+    const oldStore = this.currentStore;
+    this.currentStore = store;
     try {
-      return f(...args)
+      return f(...args);
     } finally {
-      this.currentStore = oldStore
+      this.currentStore = oldStore;
     }
   }
 
@@ -51,6 +51,6 @@ export class StackLocalStorage<T> {
    * @returns - the current store
    */
   getStore() {
-    return this.currentStore
+    return this.currentStore;
   }
 }

@@ -4,8 +4,8 @@
  */
 export class ExclusiveStorageEmptyError extends Error {
   constructor(message: string) {
-    super(message)
-    this.name = 'ExclusiveStorageEmptyError'
+    super(message);
+    this.name = "ExclusiveStorageEmptyError";
   }
 }
 
@@ -15,7 +15,7 @@ export class ExclusiveStorageEmptyError extends Error {
  */
 export class ExclusiveStorageConflictError extends Error {
   constructor(message: string) {
-    super(message)
-    this.name = 'ExclusiveStorageConflictError'
+    super(message);
+    this.name = "ExclusiveStorageConflictError";
   }
 }

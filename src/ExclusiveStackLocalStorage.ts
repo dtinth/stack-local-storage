@@ -1,8 +1,5 @@
-import {
-  ExclusiveStorageConflictError,
-  ExclusiveStorageEmptyError,
-} from './errors'
-import { StackLocalStorage } from './StackLocalStorage'
+import { ExclusiveStorageConflictError, ExclusiveStorageEmptyError } from "./errors.ts";
+import { StackLocalStorage } from "./StackLocalStorage.ts";
 
 /**
  * Like a {@link StackLocalStorage}, but only allows one store to be set at a time.
@@ -22,9 +19,9 @@ import { StackLocalStorage } from './StackLocalStorage'
  * @public
  */
 export class ExclusiveStackLocalStorage<T> {
-  private emptyErrorMessage: string
-  private conflictErrorMessage: string
-  private storage = new StackLocalStorage<{ value: T } | undefined>(undefined)
+  private emptyErrorMessage: string;
+  private conflictErrorMessage: string;
+  private storage = new StackLocalStorage<{ value: T } | undefined>(undefined);
 
   /**
    * Creates a new ExclusiveStackLocalStorage.
@@ -32,8 +29,8 @@ export class ExclusiveStackLocalStorage<T> {
    * @param options - the options
    */
   constructor(options: ExclusiveStackLocalStorageOptions) {
-    this.emptyErrorMessage = options.emptyErrorMessage
-    this.conflictErrorMessage = options.conflictErrorMessage
+    this.emptyErrorMessage = options.emptyErrorMessage;
+    this.conflictErrorMessage = options.conflictErrorMessage;
   }
 
   /**
@@ -50,9 +47,9 @@ export class ExclusiveStackLocalStorage<T> {
    */
   run<X, A extends any[]>(store: T, f: (...args: A) => X, ...args: A): X {
     if (this.storage.getStore()) {
-      throw new ExclusiveStorageConflictError(this.conflictErrorMessage)
+      throw new ExclusiveStorageConflictError(this.conflictErrorMessage);
     }
-    return this.storage.run({ value: store }, f, ...args)
+    return this.storage.run({ value: store }, f, ...args);
   }
 
   /**
@@ -62,11 +59,11 @@ export class ExclusiveStackLocalStorage<T> {
    * If the store is not set, it will throw an error with the `emptyErrorMessage` as the message.
    */
   getStore(): T {
-    const store = this.storage.getStore()
+    const store = this.storage.getStore();
     if (!store) {
-      throw new ExclusiveStorageEmptyError(this.emptyErrorMessage)
+      throw new ExclusiveStorageEmptyError(this.emptyErrorMessage);
     }
-    return store.value
+    return store.value;
   }
 }
 
@@ -78,9 +75,9 @@ export interface ExclusiveStackLocalStorageOptions {
   /**
    * The error message to throw when the store is empty.
    */
-  emptyErrorMessage: string
+  emptyErrorMessage: string;
   /**
    * The error message to throw when the store is already set.
    */
-  conflictErrorMessage: string
+  conflictErrorMessage: string;
 }
