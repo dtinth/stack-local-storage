@@ -1,5 +1,11 @@
 # stack-local-storage
 
+## 1.0.0
+
+### Major Changes
+
+- b483d02: This package is now ESM only
+
 ## 0.2.0
 
 ### Minor Changes
